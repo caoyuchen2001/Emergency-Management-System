@@ -1,0 +1,49 @@
+[1747254518] [init_log logger.c] [FILE_PARSING] Inizializzazione sistema di logging
+[1747254518] [main.c] [FILE_PARSING] Avvio del parsing di env.conf
+[1747254518] [parse_env.c] [FILE_PARSING] Apertura del file env.conf
+[1747254518] [parse_env.c] [FILE_PARSING] Chiusura del file env.conf
+[1747254518] [env.conf] [FILE_PARSING] Riga 1: queue=emergenze616906
+[1747254518] [env.conf] [FILE_PARSING] Riga 2: height=300
+[1747254518] [env.conf] [FILE_PARSING] Riga 3: width=400
+[1747254518] [parse_env.c] [FILE_PARSING] Parsing completato con successo
+[1747254518] [main.c] [FILE_PARSING] Avvio del parsing di rescuers.conf
+[1747254518] [parse_rescuers.c] [FILE_PARSING] Apertura del file rescuers.conf
+[1747254518] [parse_rescuers.c] [FILE_PARSING] Chiusura del file rescuers.conf
+[1747254518] [rescuers.conf] [FILE_PARSING] Riga 1: rescuer_nome=Pompieri, quantita'=2, velocita'=2, base=(120,200)
+[1747254518] [rescuers.conf] [FILE_PARSING] Riga 2: rescuer_nome=Ambulanza, quantita'=2, velocita'=2, base=(120,200)
+[1747254518] [parse_rescuers.c] [FILE_PARSING] Parsing completato con successo
+[1747254518] [main.c] [FILE_PARSING] Avvio del parsing di emergency_types.conf
+[1747254518] [parse_emergency_types.c] [FILE_PARSING] Apertura del file emergency_types.conf
+[1747254518] [emergency_types.conf] [FILE_PARSING] Riga 1: [Allagamento] [2] Pompieri:2,5;Ambulanza:2,2;
+[1747254518] [emergency_types.conf] [FILE_PARSING] Riga 2: [Incendio] [2] Pompieri:2,5;Ambulanza:2,2;
+[1747254518] [parse_emergency_types.c] [FILE_PARSING] Parsing completato con successo
+[1747254518] [parse_emergency_types.c] [FILE_PARSING] Chiusura del file emergency_types.conf
+[1747254518] [Emergenza 1] [MESSAGE_QUEUE] Ricevuto messaggio MQ: Allagamento 100 200 1747254518
+[1747254518] [Emergenza 1] [MESSAGE_QUEUE] ID 1: Estratti -> tipo: Allagamento, coordinate: (100,200), timestamp: 1747254518
+[1747254518] [Emergenza 2] [MESSAGE_QUEUE] Ricevuto messaggio MQ: Incendio 140 200 1747254518
+[1747254518] [Emergenza 2] [MESSAGE_QUEUE] ID 2: Estratti -> tipo: Incendio, coordinate: (140,200), timestamp: 1747254518
+[1747254518] [Emergenza 1] [MESSAGE_QUEUE] Richiesta validata con successo
+[1747254518] [Emergenza 2] [MESSAGE_QUEUE] Richiesta validata con successo
+[1747254518] [Emergenza 1] [MESSAGE_QUEUE] Creato oggetto emergency con tipo='Allagamento', coord=(100,200), tempo=1747254518
+[1747254518] [Emergenza 2] [MESSAGE_QUEUE] Creato oggetto emergency con tipo='Incendio', coord=(140,200), tempo=1747254518
+[1747254518] [Emergenza 2] [EMERGENCY_STATUS] Stato cambiato a ASSIGNED
+[1747254518] [Pompieri 1] [RESCUER_STATUS] Assegnato all'emergenza 2, stato EN_ROUTE_TO_SCENE
+[1747254518] [Pompieri 2] [RESCUER_STATUS] Assegnato all'emergenza 2, stato EN_ROUTE_TO_SCENE
+[1747254518] [Ambulanza 3] [RESCUER_STATUS] Assegnato all'emergenza 2, stato EN_ROUTE_TO_SCENE
+[1747254518] [Ambulanza 4] [RESCUER_STATUS] Assegnato all'emergenza 2, stato EN_ROUTE_TO_SCENE
+[1747254518] [Emergenza 2] [ASSIGNMENT] {Pompieri 1,2}{Ambulanza 3,4}
+[1747254528] [Pompieri 1] [RESCUER_STATUS] Stato cambiato a ON_SCENE per emergenza 2
+[1747254528] [Pompieri 2] [RESCUER_STATUS] Stato cambiato a ON_SCENE per emergenza 2
+[1747254528] [Ambulanza 3] [RESCUER_STATUS] Stato cambiato a ON_SCENE per emergenza 2
+[1747254528] [Ambulanza 4] [RESCUER_STATUS] Stato cambiato a ON_SCENE per emergenza 2
+[1747254528] [Emergenza 2] [EMERGENCY_STATUS] Stato cambiato a IN_PROGRESS
+[1747254529] [Emergenza 1] [EMERGENCY_STATUS] Timeout per carenza, scaduto tempo massimo disponibile
+[1747254530] [Ambulanza 4] [RESCUER_STATUS] Stato cambiato a RETURNING_TO_BASE per emergenza 2
+[1747254530] [Ambulanza 3] [RESCUER_STATUS] Stato cambiato a RETURNING_TO_BASE per emergenza 2
+[1747254533] [Pompieri 1] [RESCUER_STATUS] Stato cambiato a RETURNING_TO_BASE per emergenza 2
+[1747254533] [Pompieri 2] [RESCUER_STATUS] Stato cambiato a RETURNING_TO_BASE per emergenza 2
+[1747254533] [Emergenza 2] [EMERGENCY_STATUS] Stato cambiato a COMPLETED
+[1747254540] [Ambulanza 4] [RESCUER_STATUS] Stato cambiato a IDLE dopo completamento emergenza 2
+[1747254540] [Ambulanza 3] [RESCUER_STATUS] Stato cambiato a IDLE dopo completamento emergenza 2
+[1747254543] [Pompieri 1] [RESCUER_STATUS] Stato cambiato a IDLE dopo completamento emergenza 2
+[1747254543] [Pompieri 2] [RESCUER_STATUS] Stato cambiato a IDLE dopo completamento emergenza 2
